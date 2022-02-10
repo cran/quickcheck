@@ -2,9 +2,9 @@
 % Please edit documentation in R/any.R
 \name{any_atomic}
 \alias{any_atomic}
-\title{Atomic vector generator}
+\title{Any atomic vector generator}
 \usage{
-any_atomic(len = 1L, frac_na = 0)
+any_atomic(len = c(1L, 10L), any_na = FALSE)
 }
 \arguments{
 \item{len}{Length of the generated vectors. If \code{len} is a
@@ -12,15 +12,13 @@ single number all vectors will have this length. If
 \code{len} is a numeric vector of length 2 it will produce
 vectors with lengths between a minimum and maximum,
 inclusive. For example \code{len = c(1L, 10L)} would produce
-vectors with lengths between 1 and 10.}
+vectors with lengths between 1 and 10. To produce empty vectors
+set \code{len = 0L} or a range like \code{len = c(0L, 10L)}.}
 
-\item{frac_na}{The approximate fraction of \code{NA} values to
-be included in the vector. A fraction of 0, the default,
-will include no \code{NA} values. A fraction of 0.5 would
-include around 50\% \code{NA} values.}
+\item{any_na}{Whether \code{NA} values should be allowed.}
 }
 \value{
-A \code{hedgehog.internal.gen} generator
+A \code{quickcheck_generator} object.
 }
 \description{
 Generate vectors of integer, double, character, logical, date, POSIXct, hms,
@@ -28,5 +26,5 @@ or factors.
 }
 \examples{
 any_atomic() |> show_example()
-any_atomic(len = 10L, frac_na = 0.5) |> show_example()
+any_atomic(len = 10L, any_na = TRUE) |> show_example()
 }

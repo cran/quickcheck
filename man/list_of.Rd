@@ -4,23 +4,24 @@
 \alias{list_of}
 \title{Variable length list generator}
 \usage{
-list_of(generator, len = 1L)
+list_of(generator, len = c(1L, 10L))
 }
 \arguments{
-\item{generator}{Quickcheck generator}
+\item{generator}{A \code{quickcheck_generator} object.}
 
 \item{len}{Length of the generated vectors. If \code{len} is a
 single number all vectors will have this length. If
 \code{len} is a numeric vector of length 2 it will produce
 vectors with lengths between a minimum and maximum,
 inclusive. For example \code{len = c(1L, 10L)} would produce
-vectors with lengths between 1 and 10.}
+vectors with lengths between 1 and 10. To produce empty vectors
+set \code{len = 0L} or a range like \code{len = c(0L, 10L)}.}
 }
 \value{
-A \code{hedgehog.internal.gen} generator
+A \code{quickcheck_generator} object.
 }
 \description{
-This will generate lists with all values coming from a single input generator.
+Generate lists with all values coming from a single generator.
 }
 \examples{
 list_of(integer_(), len = 10L) |> show_example()

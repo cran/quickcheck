@@ -7,13 +7,13 @@
 \alias{posixct_right_bounded}
 \title{POSIXct generators}
 \usage{
-posixct_(len = 1L, frac_na = 0)
+posixct_(len = c(1L, 10L), any_na = FALSE)
 
-posixct_bounded(left, right, len = 1L, frac_na = 0)
+posixct_bounded(left, right, len = c(1L, 10L), any_na = FALSE)
 
-posixct_left_bounded(left, len = 1L, frac_na = 0)
+posixct_left_bounded(left, len = c(1L, 10L), any_na = FALSE)
 
-posixct_right_bounded(right, len = 1L, frac_na = 0)
+posixct_right_bounded(right, len = c(1L, 10L), any_na = FALSE)
 }
 \arguments{
 \item{len}{Length of the generated vectors. If \code{len} is a
@@ -21,12 +21,10 @@ single number all vectors will have this length. If
 \code{len} is a numeric vector of length 2 it will produce
 vectors with lengths between a minimum and maximum,
 inclusive. For example \code{len = c(1L, 10L)} would produce
-vectors with lengths between 1 and 10.}
+vectors with lengths between 1 and 10. To produce empty vectors
+set \code{len = 0L} or a range like \code{len = c(0L, 10L)}.}
 
-\item{frac_na}{The approximate fraction of \code{NA} values to
-be included in the vector. A fraction of 0, the default,
-will include no \code{NA} values. A fraction of 0.5 would
-include around 50\% \code{NA} values.}
+\item{any_na}{Whether \code{NA} values should be allowed.}
 
 \item{left}{The minimum possible value for generated
 numbers, inclusive.}
@@ -35,7 +33,7 @@ numbers, inclusive.}
 numbers, inclusive.}
 }
 \value{
-A \code{hedgehog.internal.gen} generator
+A \code{quickcheck_generator} object.
 }
 \description{
 A set of generators for POSIXct vectors.
@@ -46,5 +44,5 @@ posixct_bounded(
   left = as.POSIXct("2020-01-01 00:00:00"),
   right = as.POSIXct("2021-01-01 00:00:00")
 ) |> show_example()
-posixct_(len = 10L, frac_na = 0.5) |> show_example()
+posixct_(len = 10L, any_na = TRUE) |> show_example()
 }

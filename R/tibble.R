@@ -1,6 +1,6 @@
 #' Tibble generators
 #'
-#' Construct tibble generators in a similar way to `dplyr::tibble`.
+#' Construct tibble generators in a similar way to `tibble::tibble`.
 #'
 #' @param ... A set of name-value pairs with the values being vector generators.
 #' @template rows
@@ -11,10 +11,11 @@
 #' @template generator
 #' @export
 tibble_ <- function(..., rows = c(1L, 10L)) {
+  assert_all_modifiable_length(...)
+
   qc_gen(\()
-    list(...) |>
-      purrr::map(\(f) f(len2 = rows)) |>
-      hedgehog::gen.with(dplyr::as_tibble)
+    equal_length(..., len = rows)() |>
+      hedgehog::gen.with(tibble::as_tibble)
   )
 }
 
@@ -31,10 +32,12 @@ tibble_ <- function(..., rows = c(1L, 10L)) {
 #' @template generator
 #' @export
 tibble_of <- function(..., rows = c(1L, 10L), cols = c(1L, 10L)) {
+  assert_all_modifiable_length(...)
+
   as_tibble <-
     \(a)
       suppressMessages(
-        dplyr::as_tibble(a, .name_repair = "unique")
+        tibble::as_tibble(a, .name_repair = "unique")
       )
 
   expand_rows_and_cols <-
@@ -49,18 +52,10 @@ tibble_of <- function(..., rows = c(1L, 10L), cols = c(1L, 10L)) {
         hedgehog::gen.with(as_tibble)
 
   row_generator <-
-    if (length(rows) == 1L)
-      constant(rows)
-
-    else
-      integer_bounded(rows[1], rows[2])
+    as_length_generator(rows)
 
   col_generator <-
-    if (length(cols) == 1L)
-      constant(cols)
-
-    else
-      integer_bounded(cols[1], cols[2])
+    as_length_generator(cols)
 
   qc_gen(\()
     list_(rows = row_generator, cols = col_generator)() |>

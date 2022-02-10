@@ -1,70 +1,35 @@
-test_that("character_ generates characters", {
-  for_all(
-    a = character_(),
-    property = \(a) is.character(a) |> expect_true()
-  )
-})
+test_suite_vector_generator(character_, is.character)
 
-test_that("character_ doesn't generate NAs by default", {
-  for_all(
-    a = character_(),
-    property = \(a) a |> is.na() |> any() |> expect_false()
-  )
-})
+test_suite_vector_generator(character_letters, is.character)
 
-test_that("character_ doesn't generate empty characters by default", {
-  for_all(
-    a = character_(),
-    property = \(a) a |> is_empty_character() |> any() |> expect_false()
-  )
-})
+test_suite_vector_generator(character_numbers, is.character)
 
-test_that("character_ generates vectors of length 1 by default", {
-  for_all(
-    a = character_(),
-    property = \(a) length(a) |> expect_equal(1L)
-  )
-})
-
-test_that("character_ generates vectors of specific length", {
-  for_all(
-    len = integer_bounded(1L, 10L),
-    property = \(len) {
-      for_all(
-        a = character_(len = len),
-        property = \(a) length(a) |> expect_equal(len),
-        tests = 10L
-      )
-    },
-    tests = 10L
-  )
-})
-
-test_that("character_ generates vectors within a range of lengths", {
-  for_all(
-    min = integer_bounded(1L, 5L),
-    max = integer_bounded(5L, 10L),
-    property = \(min, max) {
-      for_all(
-        a = character_(len = c(min, max)),
-        property = \(a) expect_true(length(a) >= min && length(a) <= max),
-        tests = 10L
-      )
-    },
-    tests = 10L
-  )
-})
-
-test_that("character_ can generate vectors with NAs", {
-  for_all(
-    a = character_(len = 10L, frac_na = 1),
-    property = \(a) is_na_character(a) |> all() |> expect_true()
-  )
-})
+test_suite_vector_generator(character_alphanumeric, is.character)
 
 test_that("character_ can generate vectors with empty characters", {
   for_all(
-    a = character_(len = 10L, frac_empty = 1),
-    property = \(a) is_empty_character(a) |> all() |> expect_true()
+    a = character_(len = 100L, any_empty = TRUE),
+    property = \(a) is_empty_character(a) |> any() |> expect_true()
+  )
+})
+
+test_that("character_letters generates letter strings", {
+  for_all(
+    a = character_letters(),
+    property = \(a) grepl("^[A-Za-z]+$", a) |> all() |> expect_true()
+  )
+})
+
+test_that("character_numbers generates number strings", {
+  for_all(
+    a = character_numbers(),
+    property = \(a) grepl("^[0-9]+$", a) |> all() |> expect_true()
+  )
+})
+
+test_that("character_alphanumeric generates alphanumeric strings", {
+  for_all(
+    a = character_alphanumeric(),
+    property = \(a) grepl("^[A-Za-z0-9]+$", a) |> all() |> expect_true()
   )
 })

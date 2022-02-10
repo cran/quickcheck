@@ -1,0 +1,1 @@
+test_suite_flat_list_of_generator(flat_list_of, is_flat_list)

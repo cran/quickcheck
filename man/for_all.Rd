@@ -8,7 +8,6 @@ for_all(
   ...,
   property,
   tests = getOption("quickcheck.tests", 100L),
-  size = getOption("quickcheck.size", 50L),
   shrinks = getOption("quickcheck.shrinks", 100L),
   discards = getOption("quickcheck.discards", 100L)
 )
@@ -16,12 +15,11 @@ for_all(
 \arguments{
 \item{...}{Named generators}
 
-\item{property}{A function which takes a value from from
-the generator and calls an expectation on it.}
+\item{property}{A function which takes values from from
+the generator and calls an expectation on it. This function must have
+parameters matching the generator names.}
 
 \item{tests}{The number of tests to run.}
-
-\item{size}{The maximum length of the generators.}
 
 \item{shrinks}{The maximum number of shrinks to run when
 shrinking a value to find the smallest counterexample.}
@@ -37,8 +35,8 @@ Test properties of a function
 }
 \examples{
 for_all(
-  a = numeric_(),
-  b = numeric_(),
+  a = numeric_(len = 1L),
+  b = numeric_(len = 1L),
   property = \(a, b) testthat::expect_equal(a + b, b + a)
 )
 }
