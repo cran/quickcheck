@@ -1,13 +1,13 @@
-911feaaa4cce2cb76c8ae429e3aac88c *DESCRIPTION
+b187713fd09bdb767950e093d9978bea *DESCRIPTION
 4783c0af63d85e1db279a89fc879dceb *LICENSE
 bcda925e44a8767b81055079aa75e94f *NAMESPACE
-c606b31f3a349f1955dc90c37a78e3d0 *NEWS.md
+c5e88830e448ba4dc940de7cd261b3e6 *NEWS.md
 b29f68b6655086de56e9793f8e220047 *R/any.R
 40cc877906208969a15b7e2b75d34e1c *R/character.R
 3c3393be2c7f1b25c9ba15d6dd01519f *R/constant.R
 ea0945b4522210e0569dcf9b8122af48 *R/data-table.R
 1b0a9c88b36abb9455b55a9e5f243a10 *R/data_frame.R
-8ec6fc9c151f1106e5889ed04c812b86 *R/date.R
+acb0803456133eece10a3471dafee24f *R/date.R
 4698b8a94ca56178a22b757d811ecaf2 *R/double.R
 6ec074720177d7c4e57b95657bf84463 *R/factor.R
 352c53b3001fd3ee0df90de19b2dfa2a *R/for_all.R
@@ -25,7 +25,7 @@ f5fca5665ed22792280c0aa20f5dc86e *R/numeric.R
 d32c5d5da85587ea62f9ebe372589d4b *R/tibble.R
 b56ff2b193ecba52f9ec7f3b10cca008 *R/utils-pipe.R
 6425ee2fa60e04379b20c000aba8ac61 *R/utils.R
-0a85fcef7c2b1d35c7432c4206ff75ed *README.md
+2f0cbf5170ad6d57c61c0e22f80577bc *README.md
 2c01b8de51402e5d6662ff6cb6e2af20 *man/any_atomic.Rd
 cfb4234cb2d0eb3232ee6b1acb284c20 *man/any_data.table.Rd
 f821429a7239d50e43e1473668b49469 *man/any_data_frame.Rd

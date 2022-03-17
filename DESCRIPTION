@@ -1,6 +1,6 @@
 Package: quickcheck
 Title: Property Based Testing
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: 
     person(given = "Andrew",
            family = "McNeil",
@@ -22,8 +22,8 @@ Imports: testthat (>= 3.0.0), hedgehog, purrr, tibble, data.table, hms,
 Suggests: knitr, rmarkdown, covr, dplyr
 Config/testthat/edition: 3
 NeedsCompilation: no
-Packaged: 2022-03-11 03:22:09 UTC; mcneil
+Packaged: 2022-03-16 17:38:28 UTC; mcneil
 Author: Andrew McNeil [aut, cre]
 Maintainer: Andrew McNeil <andrew.richard.mcneil@gmail.com>
 Repository: CRAN
-Date/Publication: 2022-03-11 03:40:02 UTC
+Date/Publication: 2022-03-17 13:10:02 UTC
