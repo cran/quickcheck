@@ -1,7 +1,7 @@
-b187713fd09bdb767950e093d9978bea *DESCRIPTION
+256fdd83e4520e5f1ab2633d697622c2 *DESCRIPTION
 4783c0af63d85e1db279a89fc879dceb *LICENSE
 bcda925e44a8767b81055079aa75e94f *NAMESPACE
-c5e88830e448ba4dc940de7cd261b3e6 *NEWS.md
+96afdfce276125a04fadc9f405316386 *NEWS.md
 b29f68b6655086de56e9793f8e220047 *R/any.R
 40cc877906208969a15b7e2b75d34e1c *R/character.R
 3c3393be2c7f1b25c9ba15d6dd01519f *R/constant.R
@@ -10,7 +10,7 @@ ea0945b4522210e0569dcf9b8122af48 *R/data-table.R
 acb0803456133eece10a3471dafee24f *R/date.R
 4698b8a94ca56178a22b757d811ecaf2 *R/double.R
 6ec074720177d7c4e57b95657bf84463 *R/factor.R
-352c53b3001fd3ee0df90de19b2dfa2a *R/for_all.R
+965f3e62e136478fccdb1dfa403f7dec *R/for_all.R
 f0980c9759191bd210f6397591be5387 *R/hms.R
 5cbc867b3ee2983a2efb30541e2e42c6 *R/integer.R
 83318608233a0f1e47f9a3acbef89ad7 *R/list.R
@@ -21,10 +21,10 @@ f5fca5665ed22792280c0aa20f5dc86e *R/numeric.R
 63099ea7fa47a86094ab12adaf0b1e78 *R/other.R
 87d60a61ee18df2eef46afd4a9b549cf *R/posixct.R
 37a8c00036c108822b6c5fbfa019df68 *R/repeat_test.R
-30bab564f2ef16be4c806e314116f803 *R/testthat-suites.R
+520c219f1120216c7e26b2fb52f619aa *R/testthat-suites.R
 d32c5d5da85587ea62f9ebe372589d4b *R/tibble.R
 b56ff2b193ecba52f9ec7f3b10cca008 *R/utils-pipe.R
-6425ee2fa60e04379b20c000aba8ac61 *R/utils.R
+b23c8cd032b7e333ba385152498db216 *R/utils.R
 2f0cbf5170ad6d57c61c0e22f80577bc *README.md
 2c01b8de51402e5d6662ff6cb6e2af20 *man/any_atomic.Rd
 cfb4234cb2d0eb3232ee6b1acb284c20 *man/any_data.table.Rd
@@ -49,7 +49,7 @@ f7c6857e94c0f28c59fb87cc7282f96a *man/equal_length.Rd
 3cf24430901968b1e2e355799e1bd1a5 *man/factor_.Rd
 524870e7369749c8d610c999342d0427 *man/figures/hex.png
 4e7d40ff410d0eb394f3ce901a748dda *man/flat_list_of.Rd
-d2904bb9fb3722ad2b92462dd20c7e65 *man/for_all.Rd
+2186e5668cf4cf6de7be1f989233c538 *man/for_all.Rd
 5fbfb0e9f664e245da03dbc4a4549b46 *man/from_hedgehog.Rd
 7efc1bd15f077d8990a376a26b44c451 *man/hms_.Rd
 121457a30d27a5a54fd86b8b29cab099 *man/integer_.Rd
